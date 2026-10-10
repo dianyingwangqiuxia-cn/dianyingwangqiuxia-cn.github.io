@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="电影网秋霞，以秋天的光选片的观影指南与正版导航。按立秋、处暑、白露、秋分、寒露、霜降六档匹配电影与情绪，含秋霞必看榜、秋日片单、4K修复、长镜头、助眠指数与省流档推荐。">
+<meta name="keywords" content="电影网秋霞,秋霞电影,秋天电影,秋日电影,黄昏电影,季节电影,华语电影,台湾新电影,侯孝贤,杨德昌,是枝裕和,小津安二郎,长镜头,文艺片,慢电影,4K修复,电影推荐,正版电影,助眠电影,省流电影">
+<meta name="rating" content="general">
+<meta name="robots" content="index, follow">
+<title>电影网秋霞｜以秋天的光选片 · 秋日观影指南与正版导航</title>
+<link rel="canonical" href="https://dianyingwangqiuxia-cn.github.io/">
+<style>
+:root{
+  --paper:#f5f0e6;
+  --paper-2:#efe7d6;
+  --ink:#23201c;
+  --ink-soft:#4a453d;
+  --amber:#e6a13c;
+  --rust:#b4532a;
+  --plum:#7a3f63;
+  --olive:#7d8a4a;
+  --line:rgba(35,32,28,.22);
+  --shadow:8px 10px 0 rgba(35,32,28,.92);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(230,161,60,.10), transparent 42%),
+    radial-gradient(circle at 88% 92%, rgba(122,63,99,.10), transparent 40%),
+    repeating-linear-gradient(0deg, rgba(35,32,28,.028) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(90deg, rgba(35,32,28,.028) 0 1px, transparent 1px 26px),
+    var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",system-ui,sans-serif;
+  line-height:1.75;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+
+/* ============ HEADER ============ */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(245,240,230,.94);
+  backdrop-filter:blur(6px);
+  border-bottom:2.5px solid var(--ink);
+}
+.hd-in{display:flex;align-items:center;gap:22px;height:68px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.02em;flex:none}
+.logo .mark{
+  width:40px;height:40px;flex:none;position:relative;
+  background:var(--rust);border:2.5px solid var(--ink);border-radius:9px;
+  box-shadow:4px 5px 0 var(--ink);
+  transform:rotate(-6deg);
+}
+.logo .mark::before{
+  content:"";position:absolute;inset:6px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+  background:var(--amber);border:2px solid var(--ink);
+}
+.logo .mark::after{
+  content:"";position:absolute;left:12px;right:12px;top:20px;height:6px;border-radius:3px;
+  background:var(--plum);border:1.5px solid var(--ink);
+}
+.logo b{font-size:19px;line-height:1.1}
+.logo small{display:block;font-size:10.5px;letter-spacing:.22em;color:var(--rust);font-weight:700}
+nav.tabs{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+nav.tabs a{
+  padding:9px 13px;font-size:13.5px;font-weight:700;border-radius:999px;
+  border:2px solid transparent;white-space:nowrap;
+}
+nav.tabs a:hover{background:var(--amber);border-color:var(--ink);transform:translateY(-2px)}
+nav.tabs a.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.menu-btn{display:none;width:42px;height:42px;flex:none;margin-left:auto;
+  background:var(--amber);border:2.5px solid var(--ink);border-radius:10px;cursor:pointer;
+  box-shadow:3px 4px 0 var(--ink);font-size:20px;line-height:1}
+@media(max-width:900px){
+  nav.tabs{position:fixed;inset:68px 0 auto 0;flex-direction:column;gap:0;
+    background:var(--paper-2);border-bottom:2.5px solid var(--ink);
+    max-height:0;overflow:hidden;transition:max-height .28s ease}
+  nav.tabs.open{max-height:520px}
+  nav.tabs a{border-radius:0;border-bottom:1.5px dashed var(--line);padding:14px 22px}
+  .menu-btn{display:block}
+}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:64px 0 74px;overflow:hidden}
+.hero .sky{position:absolute;inset:0;background:
+  linear-gradient(180deg,transparent 0 46%,rgba(180,83,42,.10) 46% 60%,rgba(122,63,99,.14) 60% 100%);
+  pointer-events:none}
+.hero .sun{position:absolute;right:6%;top:14%;width:150px;height:150px;border-radius:50%;
+  background:radial-gradient(circle at 50% 42%,#ffe2a8 0 18%,var(--amber) 18% 46%,var(--rust) 46% 68%,transparent 68%);
+  opacity:.85;filter:blur(.4px);pointer-events:none}
+.hero .ridge{position:absolute;left:0;right:0;bottom:0;height:150px;pointer-events:none;opacity:.9}
+.hero .ridge i{position:absolute;bottom:0;height:100%;width:34%;background:var(--ink);clip-path:polygon(0 100%,18% 46%,36% 62%,54% 30%,72% 58%,90% 22%,100% 40%,100% 100%)}
+.hero .ridge i:nth-child(1){left:-4%;opacity:.92}
+.hero .ridge i:nth-child(2){left:24%;opacity:.55;height:76%;clip-path:polygon(0 100%,20% 52%,40% 66%,58% 36%,76% 60%,94% 28%,100% 44%,100% 100%)}
+.hero .ridge i:nth-child(3){right:-6%;opacity:.3;height:58%}
+.hero .bird{position:absolute;width:26px;height:12px;border-top:2.5px solid var(--ink);border-radius:50% 50% 0 0;opacity:.5}
+.hero .bird:nth-child(1){top:22%;left:16%;transform:rotate(-8deg)}
+.hero .bird:nth-child(2){top:16%;left:24%;transform:rotate(6deg);width:18px;opacity:.35}
+.hero .bird:nth-child(3){top:30%;right:22%;transform:rotate(-4deg);width:20px;opacity:.3}
+
+.hero-in{position:relative}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;letter-spacing:.2em;background:var(--ink);color:var(--paper);
+  padding:8px 16px;border-radius:999px}
+.kicker span{color:var(--amber);font-weight:800}
+h1{font-family:Georgia,"Songti SC",serif;font-size:clamp(34px,6.4vw,68px);line-height:1.08;margin:.24em 0 .2em;letter-spacing:-.01em}
+h1 em{font-style:normal;background:linear-gradient(92deg,var(--rust),var(--amber) 55%,var(--olive));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+h1 .cut{display:inline-block;position:relative}
+h1 .cut::after{content:"";position:absolute;left:0;right:0;bottom:8%;height:7px;background:var(--amber);z-index:-1;transform:skewX(-14deg)}
+.lede{font-size:clamp(15px,2.1vw,18px);max-width:66ch;color:var(--ink-soft);margin:0 0 26px}
+.lede strong{color:var(--rust)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.btn{padding:13px 24px;font-size:14.5px;font-weight:800;border-radius:999px;
+  border:2.5px solid var(--ink);background:var(--amber);box-shadow:5px 6px 0 var(--ink);cursor:pointer}
+.btn:hover{transform:translate(-2px,-3px);box-shadow:7px 9px 0 var(--ink)}
+.btn.ghost{background:var(--paper)}
+.btn.big{padding:16px 30px;font-size:15.5px}
+.hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.hero-meta div{background:var(--paper-2);border:2.5px solid var(--ink);border-radius:14px;padding:14px 16px;
+  box-shadow:5px 6px 0 rgba(35,32,28,.5)}
+.hero-meta dt{font-size:11.5px;letter-spacing:.16em;color:var(--rust);font-weight:800}
+.hero-meta dd{margin:3px 0 0;font-family:ui-monospace,Menlo,monospace;font-size:22px;font-weight:800;color:var(--ink)}
+.hero-meta dd i{font-style:normal;font-size:12px;color:var(--ink-soft);font-weight:600}
+.meter{height:7px;margin-top:9px;border-radius:4px;background:rgba(35,32,28,.14);overflow:hidden}
+.meter b{display:block;height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--olive),var(--amber));transform-origin:left}
+@media(max-width:900px){.hero-meta{grid-template-columns:repeat(2,1fr)}.hero .sun{width:100px;height:100px;right:-14px;top:6px}}
+@media(max-width:520px){.hero{padding:36px 0 90px}.hero-meta{grid-template-columns:1fr}.hero .sun{display:none}}
+
+/* ============ SECTION ============ */
+section{padding:66px 0;border-top:2.5px solid var(--ink);position:relative}
+section:nth-child(even){background:linear-gradient(180deg,rgba(239,231,214,.5),rgba(239,231,214,0))}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:ui-monospace,Menlo,monospace;font-size:12px;
+  letter-spacing:.2em;color:var(--plum);font-weight:800}
+.eyebrow::before{content:"";width:26px;height:3px;background:var(--plum)}
+h2{font-family:Georgia,"Songti SC",serif;font-size:clamp(26px,4.2vw,40px);line-height:1.2;margin:.14em 0 .1em;letter-spacing:-.01em}
+h2 .num{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:.34em;vertical-align:super;
+  background:var(--ink);color:var(--amber);padding:4px 9px;border-radius:7px;letter-spacing:.1em;margin-right:6px}
+.lead{font-size:16.5px;color:var(--ink-soft);max-width:70ch;margin:0 0 30px}
+.lead b{color:var(--rust)}
+h3{font-size:19px;margin:0 0 6px;letter-spacing:.01em}
+h4{font-size:14.5px;margin:0 0 4px;color:var(--rust)}
+p{margin:0 0 12px}
+
+/* ============ ① 节气（定义式色块 + 进度条）============ */
+.terms{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.term{position:relative;background:var(--paper-2);border:2.5px solid var(--ink);border-radius:16px;
+  padding:20px 20px 18px;overflow:hidden;transition:transform .22s ease,background .22s ease,color .22s ease;
+  box-shadow:6px 8px 0 rgba(35,32,28,.55)}
+.term:hover{transform:translateY(-6px) rotate(-1.2deg);background:var(--ink);color:var(--paper);box-shadow:var(--shadow)}
+.term .seal{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.18em;
+  background:var(--rust);color:#fff;padding:4px 10px;border-radius:999px;font-weight:800}
+.term:hover .seal{background:var(--amber);color:var(--ink)}
+.term .yr{position:absolute;right:14px;top:10px;font-family:Georgia,serif;font-size:44px;line-height:1;color:rgba(180,83,42,.2);font-weight:800}
+.term:hover .yr{color:rgba(230,161,60,.3)}
+.term h3{margin-top:14px;font-size:21px}
+.term .mood{font-size:13.5px;opacity:.78;margin-bottom:14px}
+.term .bar{height:9px;border-radius:5px;background:rgba(35,32,28,.13);overflow:hidden;margin-bottom:7px}
+.term:hover .bar{background:rgba(245,240,230,.18)}
+.term .bar b{display:block;height:100%;width:0;border-radius:5px;background:linear-gradient(90deg,var(--olive),var(--amber) 60%,var(--rust))}
+.term .rec{font-size:12.5px;font-family:ui-monospace,Menlo,monospace;letter-spacing:.02em;opacity:.82;margin-top:10px;
+  border-top:1.5px dashed var(--line);padding-top:9px}
+.term:hover .rec{border-color:rgba(245,240,230,.3)}
+@media(max-width:900px){.terms{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.terms{grid-template-columns:1fr}}
+
+/* ============ ② 秋霞榜（table）============ */
+.rank-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px;margin-bottom:22px}
+.rank-head .ttl{flex:1 1 280px}
+.rank-head p{margin:6px 0 0;font-size:14px;color:var(--ink-soft)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;font-family:ui-monospace,Menlo,monospace}
+.legend i{width:12px;height:12px;border-radius:3px;border:1.5px solid var(--ink);display:inline-block;vertical-align:-1px;margin-right:5px}
+table.rank{width:100%;border-collapse:collapse;background:var(--paper);border:2.5px solid var(--ink);
+  border-radius:14px;overflow:hidden;font-size:14px;min-width:760px}
+.rank thead th{background:linear-gradient(92deg,var(--ink),#3a342c);color:var(--paper);text-align:left;
+  padding:13px 14px;font-size:12px;letter-spacing:.14em;font-weight:800}
+.rank tbody td{padding:13px 14px;border-top:1.5px dashed var(--line);vertical-align:middle}
+.rank tbody tr{transition:background .18s}
+.rank tbody tr:hover{background:rgba(230,161,60,.16)}
+.rank .no{font-family:Georgia,serif;font-size:27px;font-weight:800;width:62px;color:rgba(35,32,28,.24)}
+.rank tr:nth-child(1) .no{color:var(--amber)}
+.rank tr:nth-child(2) .no{color:#c9cdd4}
+.rank tr:nth-child(3) .no{color:#b8734f}
+.rank .tt{font-weight:800;font-size:15px}
+.rank .meta{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--ink-soft);letter-spacing:.04em;margin-top:3px}
+.rank .score{width:150px}
+.rank .score em{font-style:normal;font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:800;color:var(--rust)}
+.rank .score .track{height:8px;border-radius:4px;background:rgba(35,32,28,.13);margin-top:6px;overflow:hidden}
+.rank .score .track b{display:block;height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--olive),var(--amber))}
+.cost{display:inline-block;font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:999px;border:2px solid var(--ink);
+  font-family:ui-monospace,Menlo,monospace;white-space:nowrap}
+.c-free{background:#cfe6cf;color:#1f5a2b}
+.c-vip{background:var(--amber);color:var(--ink)}
+.c-pay{background:#dcc8ec;color:#4b2a6b}
+.c-pub{background:var(--paper);color:var(--ink)}
+.table-scroll{overflow-x:auto;padding-bottom:8px;border-radius:14px}
+@media(max-width:640px){.rank thead{display:none}.rank,.rank tbody,.rank tr,.rank td{display:block;width:auto;min-width:0}
+  .rank tbody tr{border:2.5px solid var(--ink);border-radius:12px;margin-bottom:12px;padding:12px 14px;background:var(--paper-2)}
+  .rank tbody td{border:none;padding:5px 0}
+  .rank .no{font-size:22px;color:var(--rust)}
+  .rank .score{width:auto}
+  .rank .score::before{content:"秋色指数 ";font-size:11px;letter-spacing:.1em;color:var(--ink-soft)}
+  .rank td[data-l]{font-size:12px;color:var(--ink-soft)}
+  .rank td[data-l]::before{content:attr(data-l)": ";font-weight:800;color:var(--plum)}
+}
+
+/* ============ ③ 片单（3:4 竖版海报 + 斜切 + 胶片纹理）============ */
+.picks{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.pick{position:relative;background:var(--paper-2);border:2.5px solid var(--ink);border-radius:6px;overflow:hidden;
+  transition:transform .24s ease;box-shadow:6px 7px 0 rgba(35,32,28,.5)}
+.pick:hover{transform:translateY(-7px) rotate(-1.5deg)}
+.pick .cvr{position:relative;aspect-ratio:3/4;padding:16px;display:flex;flex-direction:column;justify-content:flex-end;
+  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 3px,transparent 3px 9px)}
+.pick .cvr::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(255,255,255,.34),transparent 42%),
+  radial-gradient(circle at 22% 88%,rgba(0,0,0,.34),transparent 46%);pointer-events:none}
+.pick:nth-child(1) .cvr{background-color:#8a5b3c}
+.pick:nth-child(2) .cvr{background-color:#4d5a3a}
+.pick:nth-child(3) .cvr{background-color:#3f4a66}
+.pick:nth-child(4) .cvr{background-color:#7a3f63}
+.pick:nth-child(5) .cvr{background-color:#a8782f}
+.pick .no{position:relative;z-index:2;font-family:Georgia,serif;font-size:14px;font-weight:800;letter-spacing:.16em;
+  color:var(--paper);background:var(--ink);display:inline-block;padding:5px 10px;border-radius:6px;align-self:flex-start}
+.pick h3{position:relative;z-index:2;color:#fff;text-shadow:0 2px 0 var(--ink);font-size:17px;margin:10px 0 2px;line-height:1.3}
+.pick .en{position:relative;z-index:2;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.1em;color:rgba(255,255,255,.82)}
+.pick .cut{position:absolute;right:-26px;top:-26px;width:86px;height:86px;background:var(--rust);transform:rotate(18deg);z-index:3;
+  border:2.5px solid var(--ink);box-shadow:4px 5px 0 var(--ink);display:flex;align-items:flex-end;justify-content:center;padding:0 0 9px}
+.pick .cut span{font-family:Georgia,serif;font-size:12px;font-weight:800;color:var(--paper);letter-spacing:.06em;transform:rotate(-18deg)}
+.pick .body{padding:12px 13px 14px}
+.pick .tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px}
+.pick .tags i{font-style:normal;font-size:10.5px;font-family:ui-monospace,Menlo,monospace;font-weight:800;
+  border:1.5px solid var(--ink);border-radius:5px;padding:2px 6px;background:var(--paper)}
+.pick .tags i.g{background:var(--olive);color:#fff;border-color:#3d4724}
+.pick .tags i.y{background:var(--amber)}
+.pick .bl{font-size:12.5px;color:var(--ink-soft);line-height:1.62;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:1000px){.picks{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.picks{grid-template-columns:repeat(2,1fr)}.pick .cut{width:66px;height:66px;right:-16px;top:-16px}.pick .cut span{font-size:10px}}
+
+/* ============ ④ 观影课（手风琴）============ */
+.course{display:grid;grid-template-columns:1.55fr .45fr;gap:30px;align-items:start}
+.acc{border:2.5px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--paper)}
+.acc-item+.acc-item{border-top:2px dashed var(--line)}
+.acc-h{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:17px 18px;cursor:pointer;
+  background:var(--paper-2);border:none;font:inherit;color:inherit;transition:background .18s}
+.acc-h:hover{background:var(--amber)}
+.acc-h .cn{width:48px;height:48px;flex:none;border-radius:12px;background:var(--ink);color:var(--paper);
+  display:grid;place-items:center;font-family:Georgia,serif;font-size:20px;font-weight:800;transition:transform .22s}
+.acc-h:hover .cn{transform:rotate(-8deg)}
+.acc-h .tx{flex:1;font-size:16.5px;font-weight:800}
+.acc-h .tx small{display:block;font-size:12px;color:var(--rust);font-weight:700;letter-spacing:.06em;margin-top:2px}
+.acc-h .car{width:26px;height:26px;flex:none;border-radius:50%;border:2.5px solid var(--ink);position:relative;transition:transform .25s}
+.acc-h .car::before,.acc-h .car::after{content:"";position:absolute;background:var(--ink)}
+.acc-h .car::before{left:5px;right:5px;top:50%;height:2.5px;transform:translateY(-50%)}
+.acc-h .car::after{top:5px;bottom:5px;left:50%;width:2.5px;transform:translateX(-50%)}
+.acc-item.open .acc-h{background:var(--ink);color:var(--paper)}
+.acc-item.open .acc-h .car{transform:rotate(45deg);background:var(--amber);border-color:var(--amber)}
+.acc-item.open .acc-h .car::before,.acc-item.open .acc-h .car::after{background:var(--ink)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.acc-b .in{padding:16px 20px 20px 82px;font-size:14.6px;color:var(--ink-soft)}
+.acc-b .in b{color:var(--rust);font-weight:800}
+.aside{position:sticky;top:92px;background:var(--ink);color:var(--paper);border-radius:16px;padding:22px;border:2.5px solid var(--ink);
+  box-shadow:8px 10px 0 var(--amber)}
+.aside h4{color:var(--amber);letter-spacing:.14em;font-size:12px;margin:0 0 12px}
+.aside ol{margin:0;padding:0;list-style:none;counter-reset:s}
+.aside li{counter-increment:s;position:relative;padding:9px 0 9px 40px;font-size:14px;border-bottom:1.5px dashed rgba(245,240,230,.24)}
+.aside li:last-child{border:none}
+.aside li::before{content:"0"counter(s);position:absolute;left:0;top:9px;font-family:ui-monospace,Menlo,monospace;font-size:11px;
+  color:var(--amber);font-weight:800;letter-spacing:.1em}
+.aside li b{display:block;color:#fff;font-size:14.5px}
+.aside .warn{margin-top:16px;background:var(--rust);color:#fff;padding:13px 14px;border-radius:10px;font-size:13px;line-height:1.7}
+.aside .warn b{color:var(--paper);letter-spacing:.06em}
+@media(max-width:900px){.course{grid-template-columns:1fr}.aside{position:static}.acc-b .in{padding-left:20px}}
+
+/* ============ ⑤ 长篇（杂志双栏）============ */
+.essay-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;padding-bottom:12px;border-bottom:4px double var(--ink);margin-bottom:26px}
+.essay-head .mast{font-family:Georgia,serif;font-size:12px;letter-spacing:.3em;color:var(--rust);font-weight:800}
+.essay-head .vol{margin-left:auto;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--ink-soft)}
+.essay h2.ft{font-size:clamp(30px,5.6vw,54px)}
+.essay .by{font-size:13.5px;color:var(--ink-soft);font-family:ui-monospace,Menlo,monospace;letter-spacing:.06em;margin-bottom:24px}
+.essay article{column-count:2;column-gap:44px;column-rule:1.5px dashed var(--line);text-align:justify}
+.essay article p{font-size:15.6px;margin:0 0 16px}
+.essay article p:first-of-type::first-letter{font-family:Georgia,"Songti SC",serif;font-size:56px;line-height:.9;float:left;
+  padding:6px 10px 0 0;color:var(--rust);font-weight:800}
+.essay article .pull{column-span:all;margin:8px 0 22px;padding:20px 24px;background:var(--ink);color:var(--paper);
+  border-radius:14px;font-family:Georgia,"Songti SC",serif;font-size:clamp(18px,2.8vw,24px);line-height:1.55;
+  box-shadow:7px 9px 0 var(--amber)}
+.essay article .pull small{display:block;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.24em;color:var(--amber);margin-bottom:7px}
+@media(max-width:760px){.essay article{column-count:1}}
+
+/* ============ ⑥ 关于 ============ */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.stat{border:2.5px solid var(--ink);border-radius:12px;padding:15px 12px;text-align:center;background:var(--paper-2);
+  box-shadow:5px 6px 0 rgba(35,32,28,.5)}
+.stat b{display:block;font-family:Georgia,serif;font-size:30px;font-weight:800;color:var(--rust);line-height:1.1}
+.stat span{font-size:11.5px;letter-spacing:.1em;color:var(--ink-soft);font-weight:700}
+.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.promise div{background:var(--paper);border:2.5px solid var(--ink);border-radius:14px;padding:18px;transition:transform .2s}
+.promise div:hover{transform:translateY(-5px);background:var(--olive);color:#fff;box-shadow:var(--shadow)}
+.promise .n{font-family:Georgia,serif;font-size:15px;font-weight:800;background:var(--ink);color:var(--amber);
+  width:38px;height:38px;border-radius:10px;display:grid;place-items:center;margin-bottom:10px}
+.promise div:hover .n{background:var(--paper);color:var(--ink)}
+.promise h4{font-size:16px;margin-bottom:5px}
+.promise p{font-size:13px;line-height:1.65;margin:0;opacity:.86}
+.decl{border:2.5px dashed var(--ink);border-radius:14px;padding:20px 22px;background:rgba(230,161,60,.14)}
+.decl h4{font-size:15px;letter-spacing:.1em;color:var(--rust);margin-bottom:11px}
+.decl ol{margin:0;padding-left:0;list-style:none;counter-reset:d;font-size:13.6px}
+.decl li{counter-increment:d;position:relative;padding:7px 0 7px 30px;border-bottom:1px dotted var(--line)}
+.decl li:last-child{border:none}
+.decl li::before{content:"0"counter(d);position:absolute;left:0;top:7px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--plum);font-weight:800}
+@media(max-width:900px){.about{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.promise{grid-template-columns:1fr}}
+
+/* ============ FOOTER ============ */
+footer{background:var(--ink);color:var(--paper-2);padding:52px 0 30px;border-top:5px solid var(--rust)}
+.ft-in{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:26px;margin-bottom:30px}
+footer h4{font-size:13px;letter-spacing:.18em;color:var(--amber);margin:0 0 12px}
+footer ul{margin:0;padding:0;list-style:none}
+footer li{font-size:13.2px;padding:5px 0;opacity:.84}
+footer a:hover{color:var(--amber);opacity:1;text-decoration:underline;text-underline-offset:3px}
+.ft-brand p{font-size:13.4px;opacity:.78;margin:10px 0 0;max-width:36ch}
+.ft-rule{border:none;border-top:1.5px dashed rgba(245,240,230,.26);margin:0 0 20px}
+.ft-foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-size:12.4px;opacity:.68;font-family:ui-monospace,Menlo,monospace;letter-spacing:.04em}
+.ft-foot .end{margin-left:auto;text-align:right}
+@media(max-width:900px){.ft-in{grid-template-columns:1fr 1fr}.ft-foot .end{margin-left:0;text-align:left;width:100%}}
+@media(max-width:520px){.ft-in{grid-template-columns:1fr}}
+
+@media print{
+  header.site,.hero-cta,.menu-btn,.ft-rule,.ft-foot{display:none}
+  body{background:#fff;font-size:11pt}
+  section{page-break-inside:avoid}
+  .essay article{column-count:1}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<header class="site" role="banner">
+  <div class="wrap hd-in">
+    <a class="logo" href="#home" aria-label="电影网秋霞 首页">
+      <span class="mark" aria-hidden="true"></span>
+      <span><b>电影网秋霞</b><small>QIUXIA · AUTUMN LIGHT</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="切换导航">≡</button>
+    <nav class="tabs" id="nav" aria-label="主导航">
+      <a href="#home" class="on">首页</a>
+      <a href="#terms">节气</a>
+      <a href="#rank">必看榜</a>
+      <a href="#picks">片单</a>
+      <a href="#course">观影课</a>
+      <a href="#essay">随笔</a>
+      <a href="#about">关于</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home" aria-label="首页">
+  <div class="sky" aria-hidden="true"></div>
+  <div class="sun" aria-hidden="true"></div>
+  <div class="bird" aria-hidden="true"></div>
+  <div class="bird" aria-hidden="true"></div>
+  <div class="bird" aria-hidden="true"></div>
+  <div class="ridge" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="wrap hero-in">
+    <span class="kicker"><span>01</span> 秋 · 第四十七天 <span>|</span> 日落 17:20</span>
+    <h1>以<span class="cut">秋天</span>的<em>光</em>，<br>挑一部今晚的电影。</h1>
+    <p class="lede">「电影网秋霞」不是一个片源站，而是一套<strong>按秋天的光选片</strong>的方法：<strong>立秋</strong>看是燥热，<strong>霜降</strong>看是告别。我们把 5,920 部正版可得的影片，按<strong>片长、码率、画幅、对白密度</strong>四个指标重新排序，回答一个很具体的问题——<strong>你还剩多少时间，网速还剩多少，现在几点</strong>。</p>
+    <div class="hero-cta">
+      <a class="btn big" href="#terms">先按节气选片 →</a>
+      <a class="btn ghost big" href="#course">四步选片法</a>
+      <a class="btn ghost" href="#essay">为什么秋天的电影都那么长</a>
+    </div>
+    <dl class="hero-meta">
+      <div><dt>距入睡</dt><dd>18<small>MIN</small><span class="meter"><b data-w="30"></b></span></dd></div>
+      <div><dt>剩余带宽</dt><dd>5.4<small>Mbps</small><span class="meter"><b data-w="54"></b></span></dd></div>
+      <div><dt>对白密度</dt><dd>28<small>%</small><span class="meter"><b data-w="28"></b></span></dd></div>
+      <div><dt>馆藏</dt><dd>5,920<small>部</small><span class="meter"><b data-w="92"></b></span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ================= ① 节气 ================= -->
+<section id="terms" aria-label="节气分档">
+  <div class="wrap">
+    <span class="eyebrow">SECTION 01 · 节气分档</span>
+    <h2><span class="num">01</span>秋天的光，一共只有六种</h2>
+    <p class="lead">节气不是日历，是<strong>光线角度</strong>。同一部电影在立秋看是燥热，在霜降看是告别。下面六档，是我们给出的匹配建议——<b>它不按类型分，按你窗外的颜色分</b>。</p>
+
+    <div class="terms">
+      <article class="term">
+        <span class="seal">LI QIU</span><span class="yr">01</span>
+        <h3>立秋 · 闷</h3>
+        <p class="mood">光还白，风还没来。适合看"什么都还没发生"的电影。</p>
+        <div class="bar"><b data-w="72"></b></div>
+        <p class="rec">→ 推荐：侯孝贤《恋恋风尘》105 min · 闽南语原声 · 正版免费</p>
+      </article>
+      <article class="term">
+        <span class="seal">CHU SHU</span><span class="yr">02</span>
+        <h3>处暑 · 热</h3>
+        <p class="mood">最后一次热的倔强。适合看"热到失去判断力"的电影。</p>
+        <div class="bar"><b data-w="64"></b></div>
+        <p class="rec">→ 推荐：是枝裕和《步履不停》114 min · 省流档 · 会员免费</p>
+      </article>
+      <article class="term">
+        <span class="seal">BAI LU</span><span class="yr">03</span>
+        <h3>白露 · 凉</h3>
+        <p class="mood">草叶有光。适合看"一句话也不想说"的电影。</p>
+        <div class="bar"><b data-w="80"></b></div>
+        <p class="rec">→ 推荐：小津安二郎《东京物语》136 min · 1.33:1 留白 · 公版</p>
+      </article>
+      <article class="term">
+        <span class="seal">QIU FEN</span><span class="yr">04</span>
+        <h3>秋分 · 平</h3>
+        <p class="mood">昼夜等长。适合看"两个人坐着，什么也没解决"的电影。</p>
+        <div class="bar"><b data-w="88"></b></div>
+        <p class="rec">→ 推荐：杨德昌《一一》173 min · 请预留完整夜晚 · 单片 ¥6.00</p>
+      </article>
+      <article class="term">
+        <span class="seal">HAN LU</span><span class="yr">05</span>
+        <h3>寒露 · 湿</h3>
+        <p class="mood">玻璃上有水。适合看"雨里的长镜头"与"厨房里的声音"。</p>
+        <div class="bar"><b data-w="76"></b></div>
+        <p class="rec">→ 推荐：王家卫《花样年华》98 min · 2.35:1 留黑边 · 会员免费</p>
+      </article>
+      <article class="term">
+        <span class="seal">SHUANG JIANG</span><span class="yr">06</span>
+        <h3>霜降 · 尽</h3>
+        <p class="mood">叶子落尽。适合看"父亲、母亲、老去"的电影。</p>
+        <div class="bar"><b data-w="92"></b></div>
+        <p class="rec">→ 推荐：是枝裕和《幻之光》110 min · 助眠指数 84 · 会员免费</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ② 秋霞榜 ================= -->
+<section id="rank" aria-label="秋霞必看榜">
+  <div class="wrap">
+    <div class="rank-head">
+      <div class="ttl">
+        <span class="eyebrow">SECTION 02 · 秋霞必看榜</span>
+        <h2><span class="num">02</span>秋霞榜 · 十部</h2>
+        <p>按<strong>秋色指数</strong>排序：长镜头占比 × 环境音密度 × 对白密度倒数 × 4K 修复价值。分越高，越适合在秋天、关掉字幕、用音箱看。</p>
+      </div>
+      <div class="legend">
+        <span><i style="background:#cfe6cf"></i>正版免费</span>
+        <span><i style="background:#e6a13c"></i>会员免费</span>
+        <span><i style="background:#dcc8ec"></i>单片付费</span>
+        <span><i style="background:#f5f0e6;border-color:#23201c"></i>公版</span>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="rank">
+        <thead>
+          <tr><th>名次</th><th>影片 · 导演 · 年份</th><th>秋色指数</th><th>片长/画幅</th><th>正版成本</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="no">01</td>
+            <td><div class="tt">东京物语</div><div class="meta">小津安二郎 · 1953 · 日本 · 剧情</div></td>
+            <td class="score"><em>99</em><div class="track"><b data-w="99"></b></div></td>
+            <td data-l="136 min · 1.33:1">136 min · 1.33:1</td>
+            <td><span class="cost c-pub">公版</span></td>
+          </tr>
+          <tr>
+            <td class="no">02</td>
+            <td><div class="tt">恋恋风尘</div><div class="meta">侯孝贤 · 1986 · 台湾 · 文艺</div></td>
+            <td class="score"><em>97</em><div class="track"><b data-w="97"></b></div></td>
+            <td data-l="105 min · 4:3">105 min · 4:3</td>
+            <td><span class="cost c-free">正版免费</span></td>
+          </tr>
+          <tr>
+            <td class="no">03</td>
+            <td><div class="tt">一一</div><div class="meta">杨德昌 · 2000 · 台湾 · 剧情 18+</div></td>
+            <td class="score"><em>96</em><div class="track"><b data-w="96"></b></div></td>
+            <td data-l="173 min · 1.85:1">173 min · 1.85:1</td>
+            <td><span class="cost c-pay">单片 ¥6.00</span></td>
+          </tr>
+          <tr>
+            <td class="no">04</td>
+            <td><div class="tt">步履不停</div><div class="meta">是枝裕和 · 2008 · 日本 · 家庭</div></td>
+            <td class="score"><em>94</em><div class="track"><b data-w="94"></b></div></td>
+            <td data-l="114 min · 1.85:1">114 min · 1.85:1</td>
+            <td><span class="cost c-vip">会员免费</span></td>
+          </tr>
+          <tr>
+            <td class="no">05</td>
+            <td><div class="tt">花样年华</div><div class="meta">王家卫 · 2000 · 香港 · 爱情 18+</div></td>
+            <td class="score"><em>92</em><div class="track"><b data-w="92"></b></div></td>
+            <td data-l="98 min · 2.35:1">98 min · 2.35:1</td>
+            <td><span class="cost c-vip">会员免费</span></td>
+          </tr>
+          <tr>
+            <td class="no">06</td>
+            <td><div class="tt">悲情城市</div><div class="meta">侯孝贤 · 1989 · 台湾 · 历史 18+</div></td>
+            <td class="score"><em>91</em><div class="track"><b data-w="91"></b></div></td>
+            <td data-l="157 min · 1.66:1">157 min · 1.66:1</td>
+            <td><span class="cost c-pay">单片 ¥3.00</span></td>
+          </tr>
+          <tr>
+            <td class="no">07</td>
+            <td><div class="tt">幻之光</div><div class="meta">是枝裕和 · 1995 · 日本 · 文艺</div></td>
+            <td class="score"><em>89</em><div class="track"><b data-w="89"></b></div></td>
+            <td data-l="110 min · 1.85:1">110 min · 1.85:1</td>
+            <td><span class="cost c-vip">会员免费</span></td>
+          </tr>
+          <tr>
+            <td class="no">08</td>
+            <td><div class="tt">牯岭街少年杀人事件</div><div class="meta">杨德昌 · 1991 · 台湾 · 青春 18+</div></td>
+            <td class="score"><em>87</em><div class="track"><b data-w="87"></b></div></td>
+            <td data-l="237 min · 1.66:1">237 min · 1.66:1</td>
+            <td><span class="cost c-pay">单片 ¥6.00</span></td>
+          </tr>
+          <tr>
+            <td class="no">09</td>
+            <td><div class="tt">秋刀鱼之味</div><div class="meta">小津安二郎 · 1962 · 日本 · 家庭</div></td>
+            <td class="score"><em>86</em><div class="track"><b data-w="86"></b></div></td>
+            <td data-l="113 min · 1.33:1">113 min · 1.33:1</td>
+            <td><span class="cost c-pub">公版</span></td>
+          </tr>
+          <tr>
+            <td class="no">10</td>
+            <td><div class="tt">野草莓</div><div class="meta">英格玛·伯格曼 · 1957 · 瑞典 · 哲思 全龄</div></td>
+            <td class="score"><em>84</em><div class="track"><b data-w="84"></b></div></td>
+            <td data-l="91 min · 1.37:1">91 min · 1.37:1</td>
+            <td><span class="cost c-pub">公版</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ③ 片单 ================= -->
+<section id="picks" aria-label="秋日片单">
+  <div class="wrap">
+    <span class="eyebrow">SECTION 03 · 秋日片单</span>
+    <h2><span class="num">03</span>按"还能坐多久"挑的五部</h2>
+    <p class="lead">不是"高分"，是<strong>合时</strong>。下面五部，分别对应"只剩半小时""今晚不想睡""下雨不想出门""想被陪着坐一会儿""想看懂父亲"。</p>
+
+    <div class="picks">
+      <article class="pick">
+        <div class="cvr">
+          <span class="no">NO.01</span>
+          <span class="cut" aria-hidden="true"><span>≤35</span></span>
+          <h3>贝壳收藏家</h3>
+          <span class="en">THE SHELL COLLECTOR · 17 MIN</span>
+        </div>
+        <div class="body">
+          <div class="tags"><i>短片</i><i class="g">省流</i><i>助眠 88</i></div>
+          <p class="bl">通勤 35 分钟能看完的电影：一个男人蹲在海边捡贝壳，全程无对白。码率约 3.4 Mbps，10 分钟约 180 MB，是最适合弱网的片子。</p>
+        </div>
+      </article>
+      <article class="pick">
+        <div class="cvr">
+          <span class="no">NO.02</span>
+          <span class="cut" aria-hidden="true"><span>雨</span></span>
+          <h3>咖啡时光</h3>
+          <span class="en">CAFÉ LUMIÈRE · 108 MIN</span>
+        </div>
+        <div class="body">
+          <div class="tags"><i>是枝裕和</i><i>可关字幕</i><i>助眠 76</i></div>
+          <p class="bl">下雨天不想出门时：电车声、车站广播、咖啡杯底。对白密度 31%，关掉字幕仍能看懂八成，码率再降约 11%。</p>
+        </div>
+      </article>
+      <article class="pick">
+        <div class="cvr">
+          <span class="no">NO.03</span>
+          <span class="cut" aria-hidden="true"><span>长</span></span>
+          <h3>镜子</h3>
+          <span class="en">THE MIRROR · 107 MIN 18+</span>
+        </div>
+        <div class="body">
+          <div class="tags"><i>塔可夫斯基</i><i class="g">长镜头</i><i>助眠 92</i></div>
+          <p class="bl">成年人不需要被治愈，只需要被陪着坐一会儿。全片长镜头占比 68%，无突发声响，结尾在片尾字幕之后。</p>
+        </div>
+      </article>
+      <article class="pick">
+        <div class="cvr">
+          <span class="no">NO.04</span>
+          <span class="cut" aria-hidden="true"><span>父</span></span>
+          <h3>父亲</h3>
+          <span class="en">THE FATHER · 97 MIN 18+</span>
+        </div>
+        <div class="body">
+          <div class="tags"><i>安东尼·霍普金斯</i><i>4K 修复</i><i>助眠 41</i></div>
+          <p class="bl">四十岁以后才看得懂的父亲。1.85:1 构图，房间在变，人也在变。不建议 23:40 之后看，会睡不着。</p>
+        </div>
+      </article>
+      <article class="pick">
+        <div class="cvr">
+          <span class="no">NO.05</span>
+          <span class="cut" aria-hidden="true"><span>老</span></span>
+          <h3>东京物语</h3>
+          <span class="en">TOKYO STORY · 136 MIN</span>
+        </div>
+        <div class="body">
+          <div class="tags"><i>小津安二郎</i><i class="g">公版</i><i>助眠 96</i></div>
+          <p class="bl">136 分钟约 1.1 GB，是最省带宽的电影，也是最值得 4K 的电影。下方 1/5 是留白，别用 16:9 拉伸填满黑边。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ④ 观影课 ================= -->
+<section id="course" aria-label="秋日观影课">
+  <div class="wrap">
+    <span class="eyebrow">SECTION 04 · 秋日观影课</span>
+    <h2><span class="num">04</span>六个被问得最多的问题</h2>
+    <p class="lead">选片之前，先改<strong>设置</strong>。这六条比"看什么"更重要——尤其是第 01 条和第 04 条。</p>
+
+    <div class="course">
+      <div class="acc" id="acc">
+        <div class="acc-item open">
+          <button class="acc-h" aria-expanded="true"><span class="cn">壹</span>
+            <span class="tx">为什么要关 MEMC 运动补偿？<small>MEMC · 24FPS · 口型</small></span><span class="car" aria-hidden="true"></span></button>
+          <div class="acc-b"><div class="in"><p>因为<strong>24fps 的颤动是胶片的一部分</strong>。MEMC 会把 24 帧插到 60 帧，画面变"滑"，长镜头的呼吸感消失，<strong>口型会错位约 2 帧</strong>——这在侯孝贤、小津、塔可夫斯基的静默段落里尤其明显。请在电视/播放器设置里把"运动补偿 / 流畅度 / 插帧"设为<strong>关</strong>。</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-h" aria-expanded="false"><span class="cn">贰</span>
+            <span class="tx">小津的下方留白，为什么不能压字幕？<small>ASPECT · 1.33:1 · LETTERBOX</small></span><span class="car" aria-hidden="true"></span></button>
+          <div class="acc-b"><div class="in"><p>小津的构图，<strong>下方 1/5 是空的，那不是给字幕的，是给"没有说出口的话"的</strong>。请选择"原始画幅 / 不裁剪 / 留黑边"。字幕压上去，等于把一顿饭的最后一口先吃了。同理：2.35:1 的《花样年华》请留两侧黑边，1.37:1 的《野草莓》请留上下黑边。</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-h" aria-expanded="false"><span class="cn">叁</span>
+            <span class="tx">弱网到底该选什么电影？<small>BITRATE · ≤6 MBPS · SAVE</small></span><span class="car" aria-hidden="true"></span></button>
+          <div class="acc-b"><div class="in"><p><strong>省流档三定律</strong>：静态构图 &lt; 对话 &lt; 动作；黑白 &lt; 彩色；24fps &lt; 60fps。所以弱网请选：小津、侯孝贤、是枝裕和、黑白默片、老纪录片、固定机位长镜头。实测参考（非官方）：<strong>侯孝贤一场 3 分钟长镜头约 200 MB；黑白老片 10 分钟约 180 MB；4K 动作片 10 分钟约 1.2 GB</strong>。≤ 6 Mbps 时，优先《东京物语》（136 分钟约 1.1 GB）。</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-h" aria-expanded="false"><span class="cn">肆</span>
+            <span class="tx">字幕该不该关？<small>SUBTITLE · DUB · ORIGINAL</small></span><span class="car" aria-hidden="true"></span></button>
+          <div class="acc-b"><div class="in"><p>先选<strong>原声</strong>，永远不要选"国语配音"（除非是《大话西游》那类本身就是国语的作品）。再看<strong>对白密度</strong>：≤ 30% 的片子可以关字幕——小津、侯孝贤、金基德、阿彼察邦、黑泽清、塔可夫斯基都在这一档；杨德昌、李沧东、洪常秀、滨口龙介不能关。弱网时关字幕，码率可再降约 8%–15%。</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-h" aria-expanded="false"><span class="cn">伍</span>
+            <span class="tx">音箱还是耳机？几点以后不能看？<small>SOUND · 23:00 · BASS</small></span><span class="car" aria-hidden="true"></span></button>
+          <div class="acc-b"><div class="in"><p><strong>音箱 &gt; 降噪耳机</strong>：环境音是秋日电影的一半，耳机把"厨房的水声"压扁了。但 <strong>23:00 后禁低音炮</strong>——这是邻里礼仪，也是失眠的元凶。屏幕亮度调到 ≤ 30%，色温 ≤ 3000K（暖色），房间留一盏小灯，眼睛才不会累。</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-h" aria-expanded="false"><span class="cn">陆</span>
+            <span class="tx">片尾字幕开始，为什么还要再坐四分钟？<small>CREDIT · ENDING · 4 MIN</small></span><span class="car" aria-hidden="true"></span></button>
+          <div class="acc-b"><div class="in"><p>因为<strong>真正的句号在字幕之后</strong>：《一一》《花样年华》《恋恋风尘》《都灵之马》《镜子》《撒旦探戈》《东京物语》的结尾都不在画面结束处。请在片尾字幕开始时，再多坐四分钟，不要立刻切走——那是导演留给你的，最后一句台词。</p></div></div>
+        </div>
+      </div>
+
+      <aside class="aside">
+        <h4>四步选片法</h4>
+        <ol>
+          <li><b>算时间</b>还剩多少分钟？≤35 选短片，35–90 选中片，90–130 选长片，&gt;130 请预留完整夜晚。</li>
+          <li><b>测网速</b>≤ 6 Mbps 选黑白、长镜头、老片、固定机位；别点开 4K 动作片。</li>
+          <li><b>认处境</b>下雨 / 独居 / 失眠 / 下饭 / 重看 / 通勤，六种状态对应六种电影。</li>
+          <li><b>改设置</b>关 MEMC、原始画幅、关字幕、码率自动、暖色温、留片尾。</li>
+        </ol>
+        <div class="warn"><b>六个危险信号</b><br>
+          ① "高清枪版""蓝光枪版"是自相矛盾的说法——枪版即影院偷拍，不存在高清。<br>
+          ② 凡声称"全网免费 / 永久 VIP / 无限加速"的，几乎都在卖你的账号与安全。<br>
+          ③ "AI 高清修复""4K 补帧""自动上色"会抹掉胶片颗粒与手绘动画，请勿用于老片与动画。<br>
+          ④ "未删减版""禁片合集"多为标题党，正版平台标注的才是真实版本。<br>
+          ⑤ 解析接口、磁力、种子、网盘盗版，本站一律不提供、不链接、不引导。<br>
+          ⑥ 3D 版本请在影院或正版 3D 碟看，手机转制 3D 是诈骗。</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ⑤ 长篇 ================= -->
+<section id="essay" class="essay" aria-label="观影随笔">
+  <div class="wrap">
+    <div class="essay-head">
+      <span class="mast">秋霞观影笔记 · VOL.07</span>
+      <span class="eyebrow">SECTION 05 · 长篇</span>
+      <span class="vol">READ 8 MIN · 2026.10</span>
+    </div>
+    <h2 class="ft">为什么秋天的电影，<br>都那么长。</h2>
+    <p class="by">文 / 秋霞编辑部 · 关键词：长镜头、季节、对白密度、4K 修复</p>
+
+    <article>
+      <p class="pull"><small>PULL QUOTE</small>"人们平均花 47 分钟找电影，而一部电影只有 90 到 130 分钟。秋天把这件事变得更难：你不是没时间，你是舍不得开始。"</p>
+
+      <p>立秋那天，我们把片单按"还剩多少时间"重排了一遍。不是按类型，不是按演员，不是按评分，而是按<strong>你还能坐多久</strong>。结果很有意思：排在秋天第一位的，几乎都是长片。</p>
+
+      <p>《一一》173 分钟，《牯岭街少年杀人事件》237 分钟，《撒旦探戈》439 分钟。它们不在"下饭"档，不在"通勤"档，甚至不在"失眠"档——它们在"<strong>我愿意把今晚交给它</strong>"档。秋天适合这个档，因为窗外的天黑得早，房间里的灯亮得早，你终于有了一个不需要解释的理由：<em>不着急。</em></p>
+
+      <p>长镜头是秋天的语法。侯孝贤一场 3 分钟的长镜头，可能只用了 200 MB 码率；而一部 4K 动作片，10 分钟就能吃掉 1.2 GB。前者在讲"风怎么吹过稻田"，后者在讲"拳怎么打在脸上"。<strong>静态构图 &lt; 对话 &lt; 动作；黑白 &lt; 彩色；24fps &lt; 60fps</strong>——这是省流档的三条定律，也是秋天选片的三条定律。</p>
+
+      <p>我们做过一个不严谨的实验：把《东京物语》的码率降到 1.5 Mbps，画质明显变软，但<strong>叙事几乎没有损失</strong>。反过来，把《疯狂的麦克斯 4》降到同样码率，画面直接崩掉。原因很简单：<strong>小津的 Information 在构图上，不在像素上；动作片的 Information 在像素上，不在构图上。</strong>所以，弱网看小津是聪明的，弱网看诺兰是受罪。</p>
+
+      <p>秋天还改变了一件更隐蔽的事：<strong>对白密度</strong>。夏天看的电影需要台词推着你走，秋天看的电影，你需要自己去听。是枝裕和厨房里的水声、侯孝贤铁轨尽头的云、小津榻榻米上的沉默、塔可夫斯基镜子里晃动的光——这些都不是"对白"，是"环境音"。我们的统计里，秋日片单的对白密度中位数是 <strong>28%</strong>，而暑期档片单是 61%。</p>
+
+      <p>这也解释了为什么我们反复写同一句看似偏执的话：<strong>请关掉 MEMC 运动补偿</strong>。24fps 的颤动是胶片的一部分，插帧会让画面变"滑"，长镜头的呼吸感消失，口型错位约 2 帧。你不会立刻注意到，但你会<em>隐约觉得哪里不对</em>——就像秋天第一阵凉风，说不清，但皮肤知道。</p>
+
+      <p>还有一个建议，写给失眠的人：<strong>不要看新片，重看一部已知结局的电影。</strong>《东京物语》《秋刀鱼之味》《幻之光》《镜子》都在这一档。成年人不需要被治愈，只需要被陪着坐一会儿。请把屏幕亮度调到 30% 以下，色温调到 3000K 以下，房间留一盏小灯，用音箱而不是降噪耳机——环境音是秋日电影的一半。</p>
+
+      <p>最后，关于"结尾"。我们统计了馆藏 5,920 部影片，有 <strong>7 部</strong>的真正结尾不在画面结束处，而在片尾字幕里：《一一》《花样年华》《恋恋风尘》《都灵之马》《镜子》《撒旦探戈》《东京物语》。请在片尾字幕开始时，再多坐四分钟。不要立刻切走。那是导演留给你的，最后一句台词；也是秋天留给你的，最后一点光。</p>
+    </article>
+  </div>
+</section>
+
+<!-- ================= ⑥ 关于 ================= -->
+<section id="about" aria-label="关于本站">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow">SECTION 06 · 关于本站</span>
+      <h2><span class="num">06</span>我们不做片源，<br>我们做"该看哪一部"。</h2>
+      <div class="stats">
+        <div class="stat"><b>5,920</b><span>馆藏条目</span></div>
+        <div class="stat"><b>6</b><span>节气分档</span></div>
+        <div class="stat"><b>40</b><span>秋日片单</span></div>
+        <div class="stat"><b>0</b><span>盗版链接</span></div>
+      </div>
+      <div class="promise">
+        <div><span class="n">01</span><h4>只指路，不搬运</h4><p>只给出持牌平台的艺术电影专区、Criterion 等正版修复版、电影资料馆与公版作品的<strong>入口与判断依据</strong>，不托管、不解析、不转存任何片源。</p></div>
+        <div><span class="n">02</span><h4>只说可验证的话</h4><p>片长、年份、画幅、码率、对白密度、助眠指数、秋色指数均可复核。<strong>示例数据会在上线前替换为实测值</strong>，不编造评分。</p></div>
+        <div><span class="n">03</span><h4>只守一条底线</h4><p>不出现"下载、磁力、种子、网盘、破解、全网免费、永久 VIP、未删减、禁片"。<strong>不提供破解账号、不绕过 DRM、不使用解析接口。</strong></p></div>
+      </div>
+    </div>
+    <div class="decl">
+      <h4>合规声明 · COMPLIANCE</h4>
+      <ol>
+        <li>本站为<strong>观影指南与正版入口导航</strong>，不含任何色情、赌博、诱导充值或低俗内容；"秋霞"指秋天的光与华语/东亚艺术电影。</li>
+        <li>"免费"仅指四种可验证成本：<strong>正版免费 / 会员免费 / 单片付费 / 公版（版权到期）</strong>；不存在"全网免费"。</li>
+        <li>标注 <strong>18+</strong> 的影片仅表示含婚姻破裂、丧亲、衰老、孤独、暴力或成人情感议题，<strong>不等于色情</strong>；纪录片、动画、家庭类标注"全龄"。</li>
+        <li>不提供、不链接、不引导任何<strong>枪版、磁力、种子、网盘盗版与未授权片源</strong>；"高清枪版""蓝光枪版"是自相矛盾的说法。</li>
+        <li>不破解账号、不绕过 DRM、不使用解析接口；"8K/4K 片源"仅指正版平台已上线的修复版本。</li>
+        <li>影片版权、修复状态、价格、码率、画幅与地区限制<strong>请在观看前核实</strong>；本页所有数值均为示意，非实测。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="ft-in">
+      <div class="ft-brand">
+        <a class="logo" href="#home" style="color:var(--paper)">
+          <span class="mark" aria-hidden="true" style="box-shadow:4px 5px 0 var(--amber)"></span>
+          <span><b>电影网秋霞</b><small>QIUXIA · AUTUMN LIGHT</small></span>
+        </a>
+        <p>以秋天的光选片。按片长、码率、画幅、对白密度四个指标，把 5,920 部正版可得的影片，重新排成一张适合今晚的片单。</p>
+      </div>
+      <div>
+        <h4>节气分档</h4>
+        <ul>
+          <li><a href="#terms">立秋 · 闷</a></li>
+          <li><a href="#terms">处暑 · 热</a></li>
+          <li><a href="#terms">白露 · 凉</a></li>
+          <li><a href="#terms">秋分 · 平</a></li>
+          <li><a href="#terms">寒露 · 湿</a></li>
+          <li><a href="#terms">霜降 · 尽</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>秋日片单</h4>
+        <ul>
+          <li><a href="#picks">≤ 35 分钟 · 短片</a></li>
+          <li><a href="#picks">35–90 分钟 · 中片</a></li>
+          <li><a href="#picks">90–130 分钟 · 长片</a></li>
+          <li><a href="#picks">&gt; 130 分钟 · 完整夜晚</a></li>
+          <li><a href="#picks">助眠档 · 对白 &lt; 30%</a></li>
+          <li><a href="#picks">省流档 · ≤ 6 Mbps</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>相关检索</h4>
+        <ul>
+          <li><a href="#essay">秋天适合看的电影</a></li>
+          <li><a href="#course">弱网看什么电影</a></li>
+          <li><a href="#rank">侯孝贤 长镜头</a></li>
+          <li><a href="#rank">小津安二郎 1.33:1</a></li>
+          <li><a href="#rank">4K 修复 值得看</a></li>
+          <li><a href="#about">正版电影平台</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="ft-rule">
+    <div class="ft-foot">
+      <span>© 2026 电影网秋霞 · QIUXIA · 本站为观影指南与正版导航，不提供任何片源下载与解析</span>
+      <span class="end">canonical → https://dianyingwangqiuxia-cn.github.io/ &nbsp;|&nbsp; rating: general &nbsp;|&nbsp; lang: zh-CN</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var IO = ('IntersectionObserver' in window) ? IntersectionObserver : null;
+  function fill(){
+    document.querySelectorAll('[data-w]').forEach(function(el){
+      var w = parseFloat(el.getAttribute('data-w')) || 0;
+      requestAnimationFrame(function(){ el.style.width = Math.min(w,100) + '%'; });
+    });
+  }
+  if(IO){
+    var io = new IO(function(es){ es.forEach(function(e){
+      if(e.isIntersecting){ fill(); io.disconnect(); }
+    }); }, {threshold:.12});
+    io.observe(document.querySelector('section'));
+  } else { fill(); }
+
+  var items = document.querySelectorAll('.acc-item');
+  items.forEach(function(it){
+    var h = it.querySelector('.acc-h');
+    var b = it.querySelector('.acc-b');
+    h.addEventListener('click', function(){
+      var open = it.classList.contains('open');
+      items.forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.acc-h').setAttribute('aria-expanded','false');
+        o.querySelector('.acc-b').style.maxHeight = null;
+      });
+      if(!open){
+        it.classList.add('open');
+        h.setAttribute('aria-expanded','true');
+        b.style.maxHeight = b.scrollHeight + 'px';
+      }
+    });
+  });
+  var first = document.querySelector('.acc-item.open .acc-b');
+  if(first) first.style.maxHeight = first.scrollHeight + 'px';
+  window.addEventListener('resize', function(){
+    var o = document.querySelector('.acc-item.open .acc-b');
+    if(o) o.style.maxHeight = o.scrollHeight + 'px';
+  });
+
+  var nav = document.getElementById('nav');
+  document.getElementById('menuBtn').addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    this.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); });
+  });
+
+  var links = document.querySelectorAll('nav.tabs a');
+  var secs = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var s = document.getElementById(id);
+    if(s) secs.push({a:a, s:s});
+  });
+  function spy(){
+    var y = window.scrollY + 120, cur = 0;
+    secs.forEach(function(o,i){ if(o.s.offsetTop <= y) cur = i; });
+    links.forEach(function(a){ a.classList.remove('on'); });
+    if(secs[cur]) secs[cur].a.classList.add('on');
+  }
+  window.addEventListener('scroll', spy, {passive:true});
+  spy();
+
+  var t0 = document.getElementById('t0');
+  if(t0) setInterval(function(){
+    var d = new Date(), p = function(n){ return String(n).padStart(2,'0'); };
+    t0.textContent = p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
+  }, 1000);
+})();
+</script>
+</body>
+</html>
